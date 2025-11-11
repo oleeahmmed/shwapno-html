@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Mega Menu Desktop Hover */
+@media (min-width: 768px) {
+  .mega-menu:hover .mega-menu-content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .menu-item:hover>ul {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .menu-item>ul:hover {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* Transitions */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu */
+.mobile-menu-open {
+  transform: translateX(0) !important;
+}
+
+.overlay-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Scrollbar */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* HTMX Loading States */
+.htmx-request .htmx-indicator {
+  display: inline-block;
+}
+
+.htmx-indicator {
+  display: none;
+}
+
+/* Product Card Animations */
+.product-card {
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Discount Ribbon */
+.left-ribbon {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.ribbon-badge {
+  position: relative;
+  display: inline-block;
+  min-width: 33.333333%;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+  background-color: #DC2626;
+  padding: 0.25rem;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.375;
+  letter-spacing: -0.025em;
+  color: white;
+}
+
+.ribbon-badge::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 8px;
+  width: 100%;
+  background: linear-gradient(135deg, #DC2626 25%, transparent 25%),
+              linear-gradient(225deg, #DC2626 25%, transparent 25%);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 0;
+  background-repeat: repeat-x;
+}
+
+.ribbon-amount {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+.ribbon-text {
+  line-height: 1;
+  font-size: 10px;
+}
+
+/* Cart Badge */
+.cart-badge {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Modal Animations */
+.modal-enter {
+  animation: modalEnter 0.3s ease;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Quantity Controls */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Product Box Cart Button */
+.product-box-cart-btn {
+  transition: all 0.3s ease;
+  width: auto !important;
+  margin: 0 auto;
+}
+
+/* Center Add to Cart buttons */
+.product-card button[onclick*="addToCart"] {
+  width: 28px !important;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .product-card button[onclick*="addToCart"] {
+    width: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    border-radius: 9999px !important;
+  }
+}
+
+.product-qty-minus,
+.product-qty-plus {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.product-qty-minus:hover,
+.product-qty-plus:hover {
+  opacity: 0.8;
+}
+
+.product-qty-minus:active,
+.product-qty-plus:active {
+  transform: scale(0.95);
+}
+
+/* Add to Bag Button Animation */
+button[onclick*="addToCart"] {
+  position: relative;
+  overflow: hidden;
+}
+
+button[onclick*="addToCart"]::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button[onclick*="addToCart"]:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* Product Grid Responsive */
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

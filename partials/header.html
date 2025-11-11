@@ -1,0 +1,188 @@
+<!-- Mobile App Download Banner -->
+<div class="md:hidden bg-amber-300">
+  <a href="#" class="block relative h-[35px] max-w-xs w-full mx-auto overflow-hidden">
+    <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/app-download-mobile.png" alt="Download Shwapno App" class="absolute inset-0 w-full h-full object-contain">
+  </a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 left-0 z-50">
+  <!-- Top Bar -->
+  <div class="bg-red-600 text-white">
+    <div class="flex items-center justify-start w-full px-2.5 py-1.5 md:px-5">
+      <!-- Mobile Menu Toggle -->
+      <button onclick="toggleMobileMenu()" class="md:hidden w-4 mr-2">
+        <span class="block w-4 h-0.5 bg-white mb-1"></span>
+        <span class="block w-4 h-0.5 bg-white mb-1"></span>
+        <span class="block w-4 h-0.5 bg-white"></span>
+      </button>
+      
+      <!-- Logo -->
+      <a href="index.html" class="block w-[70px] md:w-[120px]">
+        <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/shwapno_logo.png" alt="Shwapno" class="max-w-[70px] md:max-w-[120px]">
+      </a>
+      
+      <!-- Location Button -->
+      <button onclick="openLocationModal()" class="hidden md:flex items-center bg-transparent h-[35px] border border-red-400 px-2 py-1 rounded-[3px] ml-10 max-w-[220px] min-w-[180px]">
+        <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/delivery.svg" alt="delivery" class="w-5">
+        <span id="location-text" class="text-xs text-left pl-2 overflow-hidden text-ellipsis">Select location</span>
+      </button>
+      
+      <!-- Search Bar -->
+      <div class="relative mx-auto w-6/12 max-w-[calc(100%-155px)] md:max-w-[calc(100%-800px)] md:w-[43%]">
+        <input type="text" placeholder="Search products" id="searchInput" class="w-full h-[28.125px] md:h-9 rounded-full md:rounded-[5px] pl-2 pr-6 md:pr-14 text-[10px] md:text-xs text-neutral-800 outline-none focus:ring-2 focus:ring-red-600">
+        <button onclick="searchProducts()" class="absolute right-2.5 md:right-0 top-1/2 -translate-y-1/2 h-6 md:h-9 md:px-4 md:py-1.5 md:bg-yellow-400 md:rounded-r-[5px] flex items-center">
+          <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/search.svg" alt="search" class="w-3 md:w-5">
+        </button>
+      </div>
+      
+      <!-- App Download (Desktop) -->
+      <div class="hidden md:block mr-5 rounded-[3px]">
+        <a href="#"><img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/app-download.png" alt="app_download" class="w-[175px]"></a>
+      </div>
+      
+      <!-- Language Toggle -->
+      <div class="hidden md:block mr-1.5">
+        <button class="h-9 w-[68px] text-sm font-medium border border-red-400 rounded-[5px] hover:bg-red-400">বাংলা</button>
+      </div>
+      
+      <!-- Sign In Button -->
+      <button onclick="openLoginModal()" class="text-sm h-auto md:h-9 px-0 md:px-2 flex items-center border-0 md:border md:border-red-400 md:rounded-[5px] hover:bg-red-400 transition">
+        <span class="text-base mr-2">👤</span>
+        <span class="hidden md:block text-xs font-medium">Sign in</span>
+      </button>
+      
+      <!-- User Settings (Mobile) -->
+      <button class="md:hidden flex items-center h-6 pl-3 pr-2">
+        <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/dot.svg" alt="menu" class="w-1">
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="bg-white shadow-sm border-b border-gray-200 hidden md:block px-5">
+    <div class="relative flex justify-between w-full">
+      
+      <!-- Mega Menu Container -->
+      <div class="relative mega-menu w-1/5 -mx-2">
+        <div class="flex items-center font-medium text-sm px-2 py-2.5 cursor-pointer">
+          <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/megamenu-webtoggle.svg" alt="menu" class="max-h-[18px] mr-2">
+          SHOP BY CATEGORY
+        </div>
+        
+        <!-- Mega Menu Content -->
+        <div class="mega-menu-content hidden absolute left-0 top-full bg-white shadow-lg w-[285px] max-h-[600px] overflow-auto z-50 py-1 pl-3 opacity-0 invisible transition-all">
+          <ul class="list-none">
+            <li class="menu-item relative">
+              <a href="shop.html?category=honey" class="flex items-center text-[17px] py-1.5 hover:text-red-600">
+                <span class="text-2xl mr-2">🍯</span>
+                Honey
+              </a>
+            </li>
+            <li class="menu-item relative">
+              <a href="shop.html?category=hair-care" class="flex items-center text-[17px] py-1.5 hover:text-red-600">
+                <span class="text-2xl mr-2">💆</span>
+                Hair Care
+              </a>
+            </li>
+            <li class="menu-item relative">
+              <a href="shop.html?category=oral-care" class="flex items-center text-[17px] py-1.5 hover:text-red-600">
+                <span class="text-2xl mr-2">🦷</span>
+                Oral Care
+              </a>
+            </li>
+            <li class="menu-item relative">
+              <a href="shop.html?category=health" class="flex items-center text-[17px] py-1.5 hover:text-red-600">
+                <span class="text-2xl mr-2">💊</span>
+                Health Products
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Top Links -->
+      <div class="flex items-center px-2">
+        <a href="shop.html" class="bg-gradient-to-b from-transparent to-yellow-200 border border-amber-300 text-stone-800 text-[15px] px-4 py-2.5 rounded-full hover:text-sky-600">GREAT DEALS</a>
+      </div>
+      
+      <!-- Our Outlets & Help -->
+      <div class="w-1/5 text-right">
+        <a href="#" class="inline-flex items-center text-zinc-700 text-xs p-2">
+          <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/store-location.4cae494d.jpg" alt="store" class="w-[15px] mr-2">
+          Our outlets
+        </a>
+        <a href="#" class="inline-flex items-center text-zinc-700 text-xs p-2">
+          <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/help-line.369ee6bc.png" alt="help" class="w-[15px] mr-2">
+          Help line
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobileOverlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all"></div>
+
+<!-- Mobile Menu Sidebar -->
+<div id="mobileSidebar" class="fixed top-0 left-0 w-[290px] h-full bg-white z-50 overflow-auto -translate-x-full transition-all thin-scrollbar">
+  <div class="p-4 border-b">
+    <button onclick="toggleMobileMenu()" class="text-red-600 font-medium">✕ Close</button>
+  </div>
+  
+  <ul class="list-none">
+    <li>
+      <a href="shop.html?category=honey" class="flex items-center px-4 py-3 border-b hover:bg-gray-50">
+        <span class="text-2xl mr-3">🍯</span>
+        Honey
+      </a>
+    </li>
+    <li>
+      <a href="shop.html?category=hair-care" class="flex items-center px-4 py-3 border-b hover:bg-gray-50">
+        <span class="text-2xl mr-3">💆</span>
+        Hair Care
+      </a>
+    </li>
+    <li>
+      <a href="shop.html?category=oral-care" class="flex items-center px-4 py-3 border-b hover:bg-gray-50">
+        <span class="text-2xl mr-3">🦷</span>
+        Oral Care
+      </a>
+    </li>
+    <li>
+      <a href="shop.html?category=health" class="flex items-center px-4 py-3 border-b hover:bg-gray-50">
+        <span class="text-2xl mr-3">💊</span>
+        Health Products
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- Floating Cart Button (Desktop) -->
+<button onclick="openCart()" class="hidden md:block fixed right-4 top-1/2 -translate-y-1/2 z-40 bg-yellow-400 text-xs font-medium rounded shadow-lg">
+  <span class="relative bg-red-600 text-white block px-3 pt-6 pb-2 rounded-t">
+    <span class="absolute top-1 left-1/2 -translate-x-1/2 text-lg">🛒</span>
+    <span id="desktopCartCount">0</span> items
+  </span>
+  <span class="bg-neutral-800 text-white block px-3 py-2 rounded-b">৳<span id="desktopCartTotal">0</span></span>
+</button>
+
+<!-- Mobile Bottom Nav -->
+<div class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-40 flex items-center justify-evenly p-2 md:hidden">
+  <button onclick="openLocationModal()" class="flex items-center text-xs">
+    <span class="text-xl mr-2">📍</span>
+    <span class="text-left">Location</span>
+  </button>
+  <button onclick="openCart()" class="relative bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center -translate-y-4 shadow-lg">
+    <span class="text-xl">🛒</span>
+    <span id="mobileCartCount" class="absolute -top-1 -right-1 bg-white text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium">0</span>
+  </button>
+  <button class="flex items-center text-xs">
+    <span class="text-lg mr-2">🕐</span>
+    <span class="text-left">7PM-8PM</span>
+  </button>
+</div>
+
+<!-- Modals Container -->
+<div id="modals-container"></div>

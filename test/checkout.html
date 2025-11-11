@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Shwapno</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            rubik: ['Rubik', 'Rubik Fallback'],
+            iconfont: ['iconFont'],
+            icomoon: ['icomoon']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'Rubik';
+      src: url('https://www.shwapno.com/_next/static/media/cd914ecf9c9071d5-s.p.woff2') format("woff2");
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Rubik';
+      src: url('https://www.shwapno.com/_next/static/media/0a86735c6520d94f-s.p.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Rubik';
+      src: url('https://www.shwapno.com/_next/static/media/0a86735c6520d94f-s.p.woff2') format("woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Rubik';
+      src: url('https://www.shwapno.com/_next/static/media/0a86735c6520d94f-s.p.woff2') format("woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Noto Sans Bengali';
+      src: url('https://www.shwapno.com/_next/static/media/8ddf16529f784cc9-s.p.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body class="text-black text-base not-italic normal-nums font-normal accent-auto bg-stone-50 box-border caret-transparent block tracking-[normal] leading-6 list-outside list-disc pointer-events-auto text-start indent-[0px] normal-case visible pb-11 border-separate font-rubik md:bg-white md:pb-0">
+
+<!-- Header Section -->
+<header class="sticky box-border caret-transparent z-50 left-0 top-0">
+  <div class="bg-red-600 box-border caret-transparent z-50">
+    <div class="text-white items-center box-border caret-transparent flex justify-start w-full px-2.5 py-1.5 md:px-5">
+      <a href="/" class="box-border caret-transparent block w-[70px] md:w-[120px]">
+        <img alt="Shwapno" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/shwapno_logo.png" class="text-transparent aspect-[auto_116_/_55] box-border max-w-[70px] md:max-w-[120px]" />
+      </a>
+      
+      <div class="relative text-[0px] shadow-none box-border caret-transparent leading-[0px] max-w-[calc(100%_-_155px)] w-6/12 mx-auto md:shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(35,38,59,0.1)_0px_0px_0px_1px,rgba(35,38,59,0.15)_0px_6px_16px_-4px] md:max-w-[calc(100%_-_800px)] md:w-[43%]">
+        <input placeholder="Search your products" type="text" name="search" value="" class="text-neutral-800 text-[10px] box-border caret-transparent h-[28.125px] leading-[15px] max-h-8 min-h-6 outline-transparent outline-offset-2 outline outline-2 text-ellipsis w-full pl-2 pr-6 py-0 rounded-full md:text-xs md:h-9 md:leading-4 md:max-h-9 md:pr-14 md:rounded-[5px]" />
+        <button type="button" class="absolute items-center bg-transparent caret-transparent flex h-6 text-center translate-y-[-50.0%] p-0 rounded-r-none right-2.5 top-2/4 md:bg-yellow-400 md:h-9 md:px-4 md:py-1.5 md:rounded-r-[5px] md:right-0">
+          <img alt="logo" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/search.svg" class="text-transparent aspect-[auto_16_/_16] box-border max-w-full w-3 md:w-5" />
+        </button>
+      </div>
+      
+      <button aria-label="User login Button" class="text-sm items-center bg-transparent caret-transparent block h-auto leading-[14px] max-w-none text-center text-ellipsis text-nowrap border-gray-200 overflow-hidden pl-1 pr-0 py-0 rounded-none border-0 border-solid md:flex md:h-9 md:max-w-[148px] md:border md:border-red-400 md:px-2 md:rounded-[5px] hover:bg-red-400">
+        <span class="text-xs font-medium box-border caret-transparent hidden leading-4 min-h-0 min-w-0 text-nowrap md:block md:min-h-[auto] md:min-w-[auto]">Sign in / Sign up</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="bg-white box-border caret-transparent border-b border-gray-200 px-2.5 py-2 md:px-5">
+  <div class="max-w-[1180px] mx-auto">
+    <div class="text-xs box-border caret-transparent flex items-center leading-3 md:text-sm md:leading-4">
+      <a href="/" class="text-gray-600 hover:text-red-600">Home</a>
+      <span class="text-gray-400 mx-2">/</span>
+      <a href="/cart" class="text-gray-600 hover:text-red-600">Cart</a>
+      <span class="text-gray-400 mx-2">/</span>
+      <span class="text-red-600 font-medium">Checkout</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Checkout Content -->
+<div class="max-w-[1180px] mx-auto px-2.5 py-4 md:px-5 md:py-6">
+  <div class="flex flex-wrap -mx-2">
+    
+    <!-- Left Column - Checkout Form -->
+    <div class="w-full md:w-[calc(100%-380px)] px-2 mb-4">
+      
+      <!-- Delivery Information -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 mb-4 p-4 rounded-[5px] md:p-6">
+        <h2 class="text-lg font-semibold box-border caret-transparent leading-5 mb-4 md:text-xl md:leading-6">
+          ডেলিভারি তথ্য (Delivery Information)
+        </h2>
+        
+        <div class="box-border caret-transparent">
+          <!-- Name -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              নাম (Name) <span class="text-red-600">*</span>
+            </label>
+            <input type="text" placeholder="আপনার নাম লিখুন" class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none" />
+          </div>
+          
+          <!-- Phone -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              ফোন নম্বর (Phone Number) <span class="text-red-600">*</span>
+            </label>
+            <input type="tel" placeholder="01XXXXXXXXX" class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none" />
+          </div>
+          
+          <!-- Email -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              ইমেইল (Email)
+            </label>
+            <input type="email" placeholder="example@email.com" class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none" />
+          </div>
+          
+          <!-- District -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              জেলা (District) <span class="text-red-600">*</span>
+            </label>
+            <select class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none">
+              <option value="">জেলা নির্বাচন করুন</option>
+              <option value="dhaka">Dhaka</option>
+              <option value="chittagong">Chittagong</option>
+              <option value="sylhet">Sylhet</option>
+              <option value="rajshahi">Rajshahi</option>
+              <option value="khulna">Khulna</option>
+              <option value="barisal">Barisal</option>
+              <option value="rangpur">Rangpur</option>
+              <option value="mymensingh">Mymensingh</option>
+            </select>
+          </div>
+          
+          <!-- Area -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              এলাকা (Area) <span class="text-red-600">*</span>
+            </label>
+            <select class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none">
+              <option value="">এলাকা নির্বাচন করুন</option>
+              <option value="dhanmondi">Dhanmondi</option>
+              <option value="gulshan">Gulshan</option>
+              <option value="banani">Banani</option>
+              <option value="uttara">Uttara</option>
+              <option value="mirpur">Mirpur</option>
+            </select>
+          </div>
+          
+          <!-- Address -->
+          <div class="mb-4">
+            <label class="text-sm font-medium box-border caret-transparent block leading-4 mb-2">
+              সম্পূর্ণ ঠিকানা (Full Address) <span class="text-red-600">*</span>
+            </label>
+            <textarea rows="3" placeholder="বাড়ি নং, রোড নং, ব্লক" class="text-neutral-800 text-sm box-border caret-transparent leading-5 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none resize-none"></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Delivery Time -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 mb-4 p-4 rounded-[5px] md:p-6">
+        <h2 class="text-lg font-semibold box-border caret-transparent leading-5 mb-4 md:text-xl md:leading-6">
+          ডেলিভারি সময় (Delivery Time)
+        </h2>
+        
+        <div class="box-border caret-transparent grid grid-cols-1 gap-3 md:grid-cols-2">
+          <label class="relative box-border caret-transparent">
+            <input type="radio" name="delivery-time" value="1-2-hours" class="absolute opacity-0" checked />
+            <div class="border-2 border-gray-300 box-border caret-transparent cursor-pointer p-4 rounded-[5px] transition-all hover:border-red-600 peer-checked:border-red-600 peer-checked:bg-red-50">
+              <div class="text-sm font-medium box-border caret-transparent leading-4 mb-1">1-2 ঘন্টা</div>
+              <div class="text-xs text-gray-600 box-border caret-transparent leading-3">দ্রুত ডেলিভারি</div>
+            </div>
+          </label>
+          
+          <label class="relative box-border caret-transparent">
+            <input type="radio" name="delivery-time" value="standard" class="absolute opacity-0" />
+            <div class="border-2 border-gray-300 box-border caret-transparent cursor-pointer p-4 rounded-[5px] transition-all hover:border-red-600">
+              <div class="text-sm font-medium box-border caret-transparent leading-4 mb-1">স্ট্যান্ডার্ড ডেলিভারি</div>
+              <div class="text-xs text-gray-600 box-border caret-transparent leading-3">২-৩ দিন</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      
+      <!-- Payment Method -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 mb-4 p-4 rounded-[5px] md:p-6">
+        <h2 class="text-lg font-semibold box-border caret-transparent leading-5 mb-4 md:text-xl md:leading-6">
+          পেমেন্ট পদ্ধতি (Payment Method)
+        </h2>
+        
+        <div class="box-border caret-transparent space-y-3">
+          <label class="relative box-border caret-transparent flex items-center cursor-pointer">
+            <input type="radio" name="payment-method" value="cod" class="w-4 h-4 text-red-600" checked />
+            <div class="ml-3">
+              <div class="text-sm font-medium box-border caret-transparent leading-4">ক্যাশ অন ডেলিভারি</div>
+              <div class="text-xs text-gray-600 box-border caret-transparent leading-3">পণ্য পাওয়ার পর পেমেন্ট করুন</div>
+            </div>
+          </label>
+          
+          <label class="relative box-border caret-transparent flex items-center cursor-pointer">
+            <input type="radio" name="payment-method" value="online" class="w-4 h-4 text-red-600" />
+            <div class="ml-3">
+              <div class="text-sm font-medium box-border caret-transparent leading-4">অনলাইন পেমেন্ট</div>
+              <div class="text-xs text-gray-600 box-border caret-transparent leading-3">bKash, Nagad, Card</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      
+      <!-- Special Instructions -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 mb-4 p-4 rounded-[5px] md:p-6">
+        <h2 class="text-lg font-semibold box-border caret-transparent leading-5 mb-4 md:text-xl md:leading-6">
+          বিশেষ নির্দেশনা (Special Instructions)
+        </h2>
+        
+        <textarea rows="3" placeholder="কোন বিশেষ নির্দেশনা থাকলে এখানে লিখুন..." class="text-neutral-800 text-sm box-border caret-transparent leading-5 w-full border border-gray-300 px-3 py-2 rounded-[5px] focus:border-red-600 focus:outline-none resize-none"></textarea>
+      </div>
+    </div>
+    
+    <!-- Right Column - Order Summary -->
+    <div class="w-full md:w-[380px] px-2">
+      
+      <!-- Order Summary Card -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 mb-4 rounded-[5px] sticky top-20">
+        <div class="bg-yellow-400 box-border caret-transparent p-4 rounded-t-[5px]">
+          <h2 class="text-lg font-semibold box-border caret-transparent leading-5">
+            অর্ডার সারাংশ (Order Summary)
+          </h2>
+        </div>
+        
+        <div class="box-border caret-transparent p-4">
+          <!-- Cart Items -->
+          <div class="box-border caret-transparent max-h-[300px] overflow-auto mb-4">
+            <!-- Item 1 -->
+            <div class="flex items-center box-border caret-transparent border-b border-gray-200 pb-3 mb-3">
+              <div class="w-16 h-16 box-border caret-transparent flex-shrink-0">
+                <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/product1.png" alt="Product" class="w-full h-full object-contain" />
+              </div>
+              <div class="ml-3 flex-1">
+                <div class="text-sm font-medium box-border caret-transparent leading-4 mb-1">Verda Penne Pasta 400gm</div>
+                <div class="text-xs text-gray-600 box-border caret-transparent leading-3 mb-1">Qty: 2</div>
+                <div class="text-sm font-semibold text-red-600 box-border caret-transparent leading-4">৳700</div>
+              </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="flex items-center box-border caret-transparent border-b border-gray-200 pb-3 mb-3">
+              <div class="w-16 h-16 box-border caret-transparent flex-shrink-0">
+                <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/product2.png" alt="Product" class="w-full h-full object-contain" />
+              </div>
+              <div class="ml-3 flex-1">
+                <div class="text-sm font-medium box-border caret-transparent leading-4 mb-1">Verda Vita Pasta 400gm</div>
+                <div class="text-xs text-gray-600 box-border caret-transparent leading-3 mb-1">Qty: 1</div>
+                <div class="text-sm font-semibold text-red-600 box-border caret-transparent leading-4">৳350</div>
+              </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="flex items-center box-border caret-transparent pb-3">
+              <div class="w-16 h-16 box-border caret-transparent flex-shrink-0">
+                <img src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/product3.png" alt="Product" class="w-full h-full object-contain" />
+              </div>
+              <div class="ml-3 flex-1">
+                <div class="text-sm font-medium box-border caret-transparent leading-4 mb-1">PastaBeco Spaghetti 300gm</div>
+                <div class="text-xs text-gray-600 box-border caret-transparent leading-3 mb-1">Qty: 1</div>
+                <div class="text-sm font-semibold text-red-600 box-border caret-transparent leading-4">৳380</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coupon Code -->
+          <div class="box-border caret-transparent mb-4">
+            <div class="relative">
+              <input type="text" placeholder="কুপন কোড লিখুন" class="text-neutral-800 text-sm box-border caret-transparent h-10 leading-4 w-full border border-gray-300 px-3 pr-24 py-2 rounded-[5px] focus:border-red-600 focus:outline-none" />
+              <button type="button" class="absolute text-white text-xs font-medium bg-red-600 box-border caret-transparent h-8 leading-3 px-3 rounded-[3px] right-1 top-1 hover:bg-red-700">
+                প্রয়োগ করুন
+              </button>
+            </div>
+          </div>
+          
+          <!-- Price Breakdown -->
+          <div class="box-border caret-transparent border-t border-gray-200 pt-4 space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-600 box-border caret-transparent leading-4">সাবটোটাল (Subtotal)</span>
+              <span class="text-sm font-medium box-border caret-transparent leading-4">৳1,430</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-600 box-border caret-transparent leading-4">ডেলিভারি চার্জ (Delivery)</span>
+              <span class="text-sm font-medium box-border caret-transparent leading-4">৳49</span>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-green-600 box-border caret-transparent leading-4">ছাড় (Discount)</span>
+              <span class="text-sm font-medium text-green-600 box-border caret-transparent leading-4">-৳50</span>
+            </div>
+            
+            <div class="flex justify-between items-center border-t border-gray-200 pt-3 mt-3">
+              <span class="text-base font-semibold box-border caret-transparent leading-5">মোট (Total)</span>
+              <span class="text-lg font-bold text-red-600 box-border caret-transparent leading-6">৳1,429</span>
+            </div>
+          </div>
+          
+          <!-- Place Order Button -->
+          <button type="button" class="text-white text-base font-semibold bg-red-600 box-border caret-transparent w-full h-12 leading-5 mt-4 rounded-[5px] hover:bg-red-700 transition-colors">
+            অর্ডার নিশ্চিত করুন (Place Order)
+          </button>
+          
+          <!-- Delivery Info -->
+          <div class="bg-green-50 box-border caret-transparent border border-green-200 mt-4 p-3 rounded-[5px]">
+            <div class="text-xs text-green-700 box-border caret-transparent leading-4 text-center">
+              ✓ আরও ৳265 কিনলে ডেলিভারি চার্জে ৳10 ছাড়
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Trust Badges -->
+      <div class="bg-white shadow-[rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0)_0px_0px_0px_0px,rgba(0,0,0,0.05)_0px_1px_2px_0px] box-border caret-transparent border border-gray-200 p-4 rounded-[5px]">
+        <div class="flex items-center justify-around">
+          <div class="text-center">
+            <div class="text-2xl mb-1">🔒</div>
+            <div class="text-xs text-gray-600 box-border caret-transparent leading-3">Secure Payment</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl mb-1">🚚</div>
+            <div class="text-xs text-gray-600 box-border caret-transparent leading-3">Fast Delivery</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl mb-1">✓</div>
+            <div class="text-xs text-gray-600 box-border caret-transparent leading-3">Quality Products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="text-stone-800 bg-slate-100 shadow-[rgba(0,0,0,0.25)_0px_0px_15px_-5px] box-border caret-transparent w-full pt-10 mt-8">
+  <div class="box-border caret-transparent flex flex-wrap max-w-[1180px] w-full mx-auto pb-20">
+    <div class="items-center bg-white box-border caret-transparent flex flex-col justify-center max-w-60 pt-5 px-2 md:items-start md:bg-transparent md:pt-0 md:px-0">
+      <img alt="logo" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/shwapno_logo.png" class="text-transparent aspect-[auto_158_/_0] box-border caret-transparent max-w-[158px]" />
+      <div class="box-border caret-transparent text-center py-4 md:text-left">
+        <div class="font-medium box-border caret-transparent text-center pb-2 md:text-left">Always Here for You</div>
+        <div class="text-[13px] box-border caret-transparent leading-[19.5px] text-center md:text-left">Call Us: 16469 (9am-9pm, Everyday)</div>
+        <div class="text-[13px] box-border caret-transparent leading-[19.5px] text-center md:text-left">Email Us: queries@acilogistics.net</div>
+      </div>
+    </div>
+    
+    <div class="box-border caret-transparent grid grid-cols-3 max-w-4xl w-[calc(100%-520px)] my-0 mx-auto">
+      <ul class="box-border caret-transparent list-none text-left pl-0">
+        <li class="font-medium box-border caret-transparent block leading-4 text-left mb-4">Information</li>
+        <li class="box-border caret-transparent leading-4 text-left mb-4"><a href="/Office-Address" class="hover:text-sky-600">Office Address</a></li>
+        <li class="box-border caret-transparent leading-4 text-left mb-4"><a href="/AboutUs" class="hover:text-sky-600">About us</a></li>
+      </ul>
+      
+      <ul class="box-border caret-transparent list-none text-left pl-0">
+        <li class="font-medium box-border caret-transparent block leading-4 text-left mb-4">Customer Service</li>
+        <li class="box-border caret-transparent leading-4 text-left mb-4"><a href="/ContactUs-2" class="hover:text-sky-600">Contact Us</a></li>
+      </ul>
+      
+      <ul class="box-border caret-transparent list-none text-left pl-0">
+        <li class="font-medium box-border caret-transparent block leading-4 text-left mb-4">My Account</li>
+      </ul>
+    </div>
+    
+    <div class="box-border caret-transparent flex flex-col max-w-[220px] text-left mt-6 px-4 md:px-0">
+      <div class="box-border caret-transparent mb-5">
+        <p class="text-sm font-medium box-border caret-transparent leading-[14px] mb-2.5">Pay With</p>
+        <div class="box-border caret-transparent flex justify-start gap-1 w-full pt-2">
+          <img alt="payment Methods" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/payment-methods.png" class="text-transparent aspect-[auto_423_/_36] box-border caret-transparent max-w-full w-[423px]" />
+        </div>
+      </div>
+      
+      <div class="box-border caret-transparent mb-10">
+        <p class="text-sm font-medium box-border caret-transparent leading-[14px] mb-2.5">Follow Us</p>
+        <div class="box-border caret-transparent flex justify-start gap-1.5 pt-2">
+          <a href="https://www.facebook.com/Shwapno.ACILL/" class="box-border caret-transparent block">
+            <img alt="facebook" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/fb-icon.8bd9563a.png" class="text-transparent aspect-[auto_30_/_31] box-border caret-transparent max-w-full w-[30px]" />
+          </a>
+          <a href="https://www.youtube.com/shwapno" class="box-border caret-transparent block">
+            <img alt="youtube" src="https://c.animaapp.com/mhg7hhd5T4EqAy/assets/yt-icon.73c22c13.png" class="text-transparent aspect-[auto_30_/_31] box-border caret-transparent max-w-full w-[30px]" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="text-xs bg-white box-border caret-transparent leading-4 text-center py-4">Copyright © 2025</div>
+
+<!-- Mobile Bottom Navigation -->
+<div class="fixed items-center bg-white shadow-[rgba(0,0,0,0.16)_0px_0px_12px_5px] box-border caret-transparent flex justify-between w-full z-40 p-3 left-0 bottom-0 md:hidden">
+  <div class="flex flex-col">
+    <span class="text-xs text-gray-600 box-border caret-transparent leading-3 mb-1">মোট</span>
+    <span class="text-lg font-bold text-red-600 box-border caret-transparent leading-5">৳1,429</span>
+  </div>
+  <button type="button" class="text-white text-sm font-semibold bg-red-600 box-border caret-transparent h-11 px-8 rounded-[5px] hover:bg-red-700">
+    অর্ডার নিশ্চিত করুন
+  </button>
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>

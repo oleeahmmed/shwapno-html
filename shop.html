@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Dabur Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-stone-50 md:bg-white">
+
+  <!-- Header -->
+  <div id="header-container">
+    <div hx-get="partials/header.html" hx-trigger="load" hx-swap="innerHTML"></div>
+  </div>
+
+  <!-- Shop Section -->
+  <section class="max-w-7xl mx-auto py-6 md:py-8 px-3 md:px-4">
+    <div class="flex flex-col md:flex-row gap-6">
+      
+      <!-- Filters Sidebar -->
+      <aside class="w-full md:w-64 flex-shrink-0">
+        <div class="bg-white rounded-lg shadow p-4 sticky top-24">
+          <h3 class="font-bold text-lg mb-4">Filters</h3>
+          
+          <!-- Category Filter -->
+          <div class="mb-6">
+            <h4 class="font-medium mb-3 text-sm">Category</h4>
+            <div class="space-y-2">
+              <label class="flex items-center text-sm">
+                <input type="checkbox" name="category" value="all" class="filter-checkbox mr-2" checked>
+                <span>All Products</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="checkbox" name="category" value="honey" class="filter-checkbox mr-2">
+                <span>Honey</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="checkbox" name="category" value="hair-care" class="filter-checkbox mr-2">
+                <span>Hair Care</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="checkbox" name="category" value="oral-care" class="filter-checkbox mr-2">
+                <span>Oral Care</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="checkbox" name="category" value="health" class="filter-checkbox mr-2">
+                <span>Health Products</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Filter -->
+          <div class="mb-6">
+            <h4 class="font-medium mb-3 text-sm">Price Range</h4>
+            <div class="space-y-2">
+              <label class="flex items-center text-sm">
+                <input type="radio" name="price" value="all" class="filter-radio mr-2" checked>
+                <span>All Prices</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="radio" name="price" value="0-200" class="filter-radio mr-2">
+                <span>৳0 - ৳200</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="radio" name="price" value="200-500" class="filter-radio mr-2">
+                <span>৳200 - ৳500</span>
+              </label>
+              <label class="flex items-center text-sm">
+                <input type="radio" name="price" value="500-1000" class="filter-radio mr-2">
+                <span>৳500 - ৳1000</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Sort Filter -->
+          <div class="mb-6">
+            <h4 class="font-medium mb-3 text-sm">Sort By</h4>
+            <select id="sortSelect" class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm">
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+
+          <button onclick="applyFilters()" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition text-sm font-medium">
+            Apply Filters
+          </button>
+        </div>
+      </aside>
+
+      <!-- Products Grid -->
+      <div class="flex-1">
+        <div class="mb-4 flex items-center justify-between">
+          <h2 class="text-xl md:text-2xl font-bold">All Products</h2>
+          <span id="product-count" class="text-sm text-gray-600">Showing 12 products</span>
+        </div>
+
+        <div id="products-grid" 
+             hx-get="partials/products-grid.html" 
+             hx-trigger="load" 
+             hx-swap="innerHTML">
+          <div class="text-center py-8">Loading products...</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container">
+    <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="innerHTML"></div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>

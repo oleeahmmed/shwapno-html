@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Dabur</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-stone-50 md:bg-white">
+
+  <!-- Header -->
+  <div id="header-container">
+    <div hx-get="partials/header.html" hx-trigger="load" hx-swap="innerHTML"></div>
+  </div>
+
+  <!-- Product Details -->
+  <section class="max-w-7xl mx-auto py-6 md:py-8 px-3 md:px-4">
+    <div id="product-details" 
+         hx-get="partials/product-details.html" 
+         hx-trigger="load" 
+         hx-swap="innerHTML">
+      <div class="text-center py-8">Loading product...</div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="max-w-7xl mx-auto py-6 md:py-8 px-3 md:px-4">
+    <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6">Related Products</h2>
+    <div id="related-products" 
+         hx-get="partials/related-products.html" 
+         hx-trigger="load" 
+         hx-swap="innerHTML">
+      <div class="text-center py-4">Loading...</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container">
+    <div hx-get="partials/footer.html" hx-trigger="load" hx-swap="innerHTML"></div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
